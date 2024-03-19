@@ -1,6 +1,15 @@
-import {configKnex} from './src/database'
+import {knex}  from "knex"
 
-export default configKnex
+// Update with your config settings.
 
-//npm run knex -- h 
-//command to acess the options of command from knex
+const config: { [key: string]: Knex.Config } = {
+  development: {
+    client: "sqlite3",
+    connection: {
+      filename: './temp/app.db'
+    }
+  }
+
+}
+
+module.exports = config
